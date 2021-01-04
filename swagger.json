@@ -1,0 +1,198 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Mercavus Test App",
+    "version": "1.0.0",
+    "title": "Mercavus",
+    "contact": {
+      "email": "isharabnd@gmail.com"
+    }
+  },
+  "host": "petstore.swagger.io",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "Users",
+      "description": "Get,Add users"
+    },
+    {
+      "name": "Hobbies",
+      "description": "Get, Add, Remove hobbies"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/user": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Add a new user to the store",
+        "description": "",
+        "operationId": "addUser",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "body",
+            "description": "Name of the user",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Unsuccesfull Operation"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "get users list",
+        "description": "",
+        "operationId": "get users list",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": null,
+        "responses": {
+          "200": {
+            "description": "successful retieval"
+          },
+          "400": {
+            "description": "Unsuccesfull Operation"
+          }
+        }
+      }
+    },
+    "/hobby": {
+      "post": {
+        "tags": [
+          "Hobbies"
+        ],
+        "summary": "Add a new hobby to the store",
+        "description": "",
+        "operationId": "addHobby",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "body",
+            "description": "Name of the user",
+            "required": true
+          },
+          {
+            "name": "passionLevel",
+            "in": "body",
+            "description": "Passion Level - Integer 1-4 (low - very high)",
+            "required": true
+          },
+          {
+            "name": "name",
+            "in": "body",
+            "description": "Name of the hobby",
+            "required": true
+          },
+          {
+            "name": "year",
+            "in": "body",
+            "description": "Year field",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Unsuccesfull Operation"
+          }
+        }
+      }
+    },
+    "/hobby/getAll": {
+      "post": {
+        "tags": [
+          "Hobbies"
+        ],
+        "summary": "get hobbies list for user",
+        "description": "",
+        "operationId": "get hiobbies list",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "hobbies",
+            "in": "body",
+            "description": "Array of hobby Ids",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful retieval"
+          },
+          "400": {
+            "description": "Unsuccesfull Operation"
+          }
+        }
+      }
+    },
+    "/hobby/remove": {
+      "post": {
+        "tags": [
+          "Hobbies"
+        ],
+        "summary": "Remove hobby from list",
+        "description": "",
+        "operationId": "Remove hobby",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "hobby_id",
+            "in": "body",
+            "description": "Id of the removing hobby",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful removal"
+          },
+          "400": {
+            "description": "Unsuccesfull Operation"
+          }
+        }
+      }
+    }
+  }
+}

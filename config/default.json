@@ -1,0 +1,14 @@
+{
+  "appname": "satelite",
+  "version": "1.0.0",
+  "sateliteHosturl":"http://127.0.0.1:3010",
+  "satelitePort":"3010",
+  "database": {
+    "mongodb": {
+     "host": "mongodb://127.0.0.1",
+        "port": 27017,
+        "name": "satelite"
+    }
+  }
+ 
+}
