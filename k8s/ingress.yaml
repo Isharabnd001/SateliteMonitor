@@ -1,0 +1,10 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: satelite-control-ingress-1
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "satelite-control-ip"
+spec:
+  backend:
+    serviceName: satelite-control-deployment-1
+    servicePort: 3000

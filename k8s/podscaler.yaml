@@ -1,0 +1,19 @@
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: satelite-control-hpa-1
+  namespace: default
+  labels:
+    app: satelite-control-deployment-1
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: satelite-control-deployment-1
+    apiVersion: apps/v1
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: 80

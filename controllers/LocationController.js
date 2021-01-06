@@ -17,7 +17,7 @@ const LocationController = {
 
         try {
 
-            fetch('http://localhost:3010/')
+            fetch(config.sateliteHosturl)
     .then(response => response.json())
     .then(async json  => 
         {console.log(json);
