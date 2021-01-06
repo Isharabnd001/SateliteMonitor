@@ -4,20 +4,20 @@ metadata:
   name: satelite-control-deployment-7
   namespace: default
   labels:
-    app: satelite-control-deployment-1
+    app: satelite-control-deployment-2
 spec:
   replicas: 1 # number of pods
   selector:
     matchLabels:
-      app: satelite-control-deployment-1
+      app: satelite-control-deployment-2
   template:
     metadata:
       labels:
-        app: satelite-control-deployment-1
+        app: satelite-control-deployment-2
     spec:
       containers:
         - name: satelite-control-image-7
-          image: gcr.io/satelitesensor/satelite-control-image-15
+          image: IMAGE
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
