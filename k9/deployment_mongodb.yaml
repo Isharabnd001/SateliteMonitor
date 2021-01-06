@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  # labels:
+  #   app: mongo-db
+  name: mongodb-deployment
+spec:
+  serviceName: mongodb-service
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb-service
+  template:
+    metadata:
+      labels:
+        app: mongodb-service
+        selector: mongodb-deployment
+    spec:
+      containers:
+      - name: mongodb
+        volumeMounts:
+          - mountPath: /data/db
+            name: mo-data
+        image: mongo:4.4
+        ports:
+        - containerPort: 27017
+      volumes:
+      - name: mo-data
+        persistentVolumeClaim:
+          claimName: mo-data-pvc
+      restartPolicy: Always
+
+
+
