@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: satelite-control-deployment-7
+  name: satelite-control-deployment-2
   namespace: default
   labels:
     app: satelite-control-deployment-2
