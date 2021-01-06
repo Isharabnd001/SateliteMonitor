@@ -5,7 +5,7 @@
   "satelitePort":"3010",
   "database": {
     "mongodb": {
-     "host": "mongodb://mongodb-standalone-0.database",
+     "host": "mongodb://mongodb-deployment-0.mongodb-service",
         "port": 27017,
         "name": "satelite"
     }
