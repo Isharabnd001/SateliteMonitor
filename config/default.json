@@ -1,7 +1,7 @@
 {
   "appname": "satelite",
   "version": "1.0.0",
-  "sateliteHosturl":"http://satelite-sensor-deployment-0.satelite-sensor-deployment:3000",
+  "sateliteHosturl":"http://10.28.6.43:3000",
   "satelitePort":"3010",
   "database": {
     "mongodb": {
