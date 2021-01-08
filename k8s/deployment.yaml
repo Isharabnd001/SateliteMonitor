@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: satelite-control-deployment-2
+  name: satelite-control-deployment
   namespace: default
   labels:
-    app: satelite-control-deployment-2
+    app: satelite-control-deployment
 spec:
   replicas: 1 # number of pods
   selector:
     matchLabels:
-      app: satelite-control-deployment-2
+      app: satelite-control-deployment
   template:
     metadata:
       labels:
-        app: satelite-control-deployment-2
+        app: satelite-control-deployment
     spec:
       containers:
-        - name: satelite-control-image-7
+        - name: satelite-control-image
           image: IMAGE
           imagePullPolicy: Always
           ports:

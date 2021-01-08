@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: satelite-control-service
+  name: satelite-control-deployment-g
 spec:
   selector:
-    app: satelite-control-deployment
+    app: satelite-control-deployment-g
   type: LoadBalancer
   ports:
     - protocol: TCP

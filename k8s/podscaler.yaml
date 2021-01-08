@@ -4,11 +4,11 @@ metadata:
   name: satelite-control-hpa-1
   namespace: default
   labels:
-    app: satelite-control-deployment-2
+    app: satelite-control-deployment
 spec:
   scaleTargetRef:
     kind: Deployment
-    name: satelite-control-deployment-2
+    name: satelite-control-deployment
     apiVersion: apps/v1
   minReplicas: 1
   maxReplicas: 5
