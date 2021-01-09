@@ -50,8 +50,8 @@ steps:
     id: "Deploy"
     args: ["apply", "-f", "k8s/","--validate=false"]
     env: 
-     - "CLOUDSDK_COMPUTE_REGION=us-central1-c"
-     - "CLOUDSDK_CONTAINER_CLUSTER=satelite-control-cluster-1"
+     - "CLOUDSDK_COMPUTE_REGION=$_ZONE"
+     - "CLOUDSDK_CONTAINER_CLUSTER=$_CLUSTER"
   # add latest tag to new image
   - name: "gcr.io/cloud-builders/gcloud"
     id: "Tag"
