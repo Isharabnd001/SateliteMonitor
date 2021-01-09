@@ -20,7 +20,7 @@ const ConsController = {
 
         try {
             const results = await ConModel.saveCon({ name });
-            res.status(200).json({ message: "Constellation successfully added", results });
+            res.status(200).json({ message: "Constellation successfully added !!", results });
         } catch (error) {
             res.status(400).json({ message: "Unsuccessful", error });
         }
