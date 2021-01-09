@@ -1,7 +1,7 @@
 {
   "appname": "satelite",
   "version": "1.0.0",
-  "sateliteHosturl":"http://10.28.6.43:3000",
+  "sateliteHosturl":"http://35.197.67.16:3000",
   "satelitePort":"3010",
   "database": {
     "mongodb": {
