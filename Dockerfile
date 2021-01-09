@@ -18,4 +18,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 3000
-CMD [ "NODE_ENV=qa","npm", "start" ]
+CMD ["npm", "start" ]
