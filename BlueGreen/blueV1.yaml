@@ -1,15 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: satelite-control-deployment-b
+  name: satelite-control-deployment-bg-v1
   namespace: default
   labels:
-    app: satelite-control-deployment-b
+    app: satelite-control-deployment-bg
+    version: "v1"
 spec:
   replicas: 1 # number of pods
   selector:
     matchLabels:
-      app: satelite-control-deployment-b
+      app: satelite-control-deployment-bg
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -19,11 +20,12 @@ spec:
   template:
     metadata:
       labels:
-        app: satelite-control-deployment-b
+        app: satelite-control-deployment-bg
+        version: "v1"
     spec:
       containers:
         - name: satelite-control-image-7
-          image: gcr.io/satelitesensor/satelite-sensor-image-20
+          image: gcr.io/satelitesensor/satelite-control-image:V1
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
